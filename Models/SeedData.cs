@@ -15,11 +15,11 @@ namespace LibApp.Models
             {
                 if (context.MembershipTypes.Any())
                 {
-                    Console.WriteLine("Database already seeded");
-                    return;
+                    Console.WriteLine("Database already seeded with membership types");
                 }
-
-                context.MembershipTypes.AddRange(
+                else
+                {
+                    context.MembershipTypes.AddRange(
                     new MembershipType
                     {
                         Id = 1,
@@ -48,6 +48,8 @@ namespace LibApp.Models
                         DurationInMonths = 12,
                         DiscountRate = 20
                     });
+                }
+
                 context.SaveChanges();
             }
         }
