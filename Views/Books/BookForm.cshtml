@@ -10,13 +10,17 @@
 @using (Html.BeginForm("Save", "Books"))
 {
     @Html.AntiForgeryToken()
+    //@Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.Book.Name)
         @Html.TextBoxFor(m => m.Book.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Book.Name, "", new { @class = "text-danger" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Book.AuthorName)
         @Html.TextBoxFor(m => m.Book.AuthorName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Book.AuthorName, "", new { @class = "text-danger" })
+
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Book.GenreId)
@@ -24,10 +28,14 @@
                                 new SelectList(Model.Genres, "Id", "Name"),
                                 "Select Genre",
                                 new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Book.GenreId, "", new { @class = "text-danger" })
+
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Book.ReleaseDate)
         @Html.TextBoxFor(m => m.Book.ReleaseDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Book.ReleaseDate, "", new { @class = "text-danger" })
+
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Book.NumberInStock)

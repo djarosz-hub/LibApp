@@ -8,6 +8,7 @@ using LibApp.ViewModels;
 using LibApp.Data;
 using Microsoft.EntityFrameworkCore;
 using LibApp.Interfaces;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace LibApp.Controllers
 {
@@ -66,6 +67,11 @@ namespace LibApp.Controllers
         [HttpPost]
         public IActionResult Save(Book book)
         {
+            if(!ModelState.IsValid)
+            {
+                return View("BookForm");
+            }
+
             if (book.Id == 0)
             {
                 book.DateAdded = DateTime.Now;
