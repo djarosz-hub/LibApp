@@ -67,10 +67,16 @@ namespace LibApp.Controllers
         [HttpPost]
         public IActionResult Save(Book book)
         {
-            if(!ModelState.IsValid)
-            {
-                return View("BookForm");
-            }
+            //book.Genre = _context.Genre.ToList().Find(genre => genre.Id == book.GenreId);
+            //if(!ModelState.IsValid)
+            //{
+            //    var viewModel = new BookFormViewModel
+            //    {
+            //        Genres = _context.Genre.ToList()
+            //    };
+
+            //    return View("BookForm", viewModel);
+            //}
 
             if (book.Id == 0)
             {
