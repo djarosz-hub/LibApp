@@ -22,8 +22,8 @@ namespace LibApp.Models
 		public DateTime DateAdded { get; set; }
 		[Required(ErrorMessage = "Release date is required")]
 		public DateTime ReleaseDate { get; set; }
-		[Required(ErrorMessage = "Number in stock is required")]
-		[Range(1,20,ErrorMessage ="Number in stock must be between 1 and 20")]
+		[Required(ErrorMessage = "Number in stock must be between 1 and 20")]
+		[Range(1,20)]
 		public int NumberInStock { get; set; }
 		[Required(ErrorMessage = "Number of available books is required")]
 		public int NumberAvailable { get; set; }
