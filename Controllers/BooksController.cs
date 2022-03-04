@@ -81,11 +81,11 @@ namespace LibApp.Controllers
             if (book.Id == 0)
             {
                 book.DateAdded = DateTime.Now;
-                _bookRepository.AddBook(book);
+                _bookRepository.Add(book);
             }
             else
             {
-                var bookInDb = _bookRepository.GetBookById(book.Id);
+                var bookInDb = _bookRepository.Get(book.Id);
                 bookInDb.Name = book.Name;
                 bookInDb.AuthorName = book.AuthorName;
                 bookInDb.GenreId = book.GenreId;

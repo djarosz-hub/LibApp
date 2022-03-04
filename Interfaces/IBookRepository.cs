@@ -10,10 +10,10 @@ namespace LibApp.Interfaces
     public interface IBookRepository
     {
         IEnumerable<Book> GetBooks();
-        Book GetBookById(int bookId);
-        void AddBook(Book book);
-        void UpdateBook(Book book);
-        void DeleteBook(int bookId);
+        Book Get(int bookId);
+        void Add(Book book);
+        void Update(Book book);
+        void Remove(int bookId);
         void Save();
     }
 }
